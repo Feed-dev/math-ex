@@ -87,16 +87,44 @@ const RandomEx = () => {
 
   // return the JSX
   return (
-    <div>
-      <h1>Random Exercise</h1>
-      <p>
-        {state.first} {state.operator} {state.second} = <input type="text" />
-        <button onClick={() => checkAnswer(state)}>Check Answer</button>
-        <span style={{ visibility: "hidden" }}>Correct</span>
-        <span style={{ visibility: "hidden" }}>Incorrect</span>
-        <span style={{ visibility: "hidden" }}> {state.result}</span>
+    <div class="max-w-md mx-auto">
+      <h1 class="text-3xl font-bold mb-4">Random Exercise</h1>
+      <p class="flex items-center">
+        <span class="mr-2">{state.first}</span>
+        <span class="mr-2">{state.operator}</span>
+        <span class="mr-2">{state.second}</span>
+        <input
+          class="border border-gray-400 px-2 py-1 rounded mr-2"
+          type="text"
+        />
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+          onClick={() => checkAnswer(state)}
+        >
+          Check Answer
+        </button>
+        <span
+          class="text-green-500 font-bold mr-2"
+          style={{ visibility: "hidden" }}
+        >
+          Correct
+        </span>
+        <span
+          class="text-red-500 font-bold mr-2"
+          style={{ visibility: "hidden" }}
+        >
+          Incorrect
+        </span>
+        <span class="mr-2" style={{ visibility: "hidden" }}>
+          {state.result}
+        </span>
       </p>
-      <button onClick={generateExercise}>Generate Exercise</button>
+      <button
+        class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+        onClick={generateExercise}
+      >
+        Generate Exercise
+      </button>
     </div>
   );
 };
